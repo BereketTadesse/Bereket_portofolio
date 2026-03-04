@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Project } from "@/data/portfolio";
 
@@ -67,11 +67,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
 
-        {/* Highlight */}
-        <div className="pt-3 border-t border-border">
-          <p className="text-xs text-primary font-medium line-clamp-1">
+        {/* Highlight + Demo */}
+        <div className="pt-3 border-t border-border flex items-center justify-between gap-2">
+          <p className="text-xs text-primary font-medium line-clamp-1 flex-1">
             {project.highlights[0]}
           </p>
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex-shrink-0 flex items-center gap-1 px-2 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium hover:bg-primary/20 transition-colors"
+            >
+              <ExternalLink className="w-3 h-3" />
+              Live Demo
+            </a>
+          )}
         </div>
       </div>
     </Link>

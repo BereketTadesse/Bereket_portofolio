@@ -40,6 +40,7 @@ export const projects: Project[] = [
     category: "Data",
     technologies: ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL", "Docker"],
     image: customerAnalytics,
+    githubUrl: "https://github.com/BereketTadesse/Customer_Experience_Analytics_for_Fintech_Apps.git",
     featured: true,
     highlights: [
       "App Experience Inconsistency: Dashen Bank offers reliable positive experience, while BOA's app is extremely polarized, and CBE has strong core but significant edge case issues",
@@ -80,6 +81,7 @@ export const projects: Project[] = [
     category: "AI/ML",
     technologies: ["TensorFlow", "Keras", "FastAPI", "Python", "NumPy", "Pillow", "scikit-learn"],
     image: disasterResponse,
+    demoUrl: "https://bereket12445-my-tf-image-model.hf.space/docs",
     featured: true,
     highlights: [
       "Supported types: Drought, Earthquake, Flood, Hailstorm, Landslide, Locust, Sinkhole, Volcano, Wildfire",
@@ -95,6 +97,7 @@ export const projects: Project[] = [
     category: "GenAI",
     technologies: ["FastAPI", "Gemini API", "Pandas", "Geopy", "FuzzyWuzzy", "Python"],
     image: disasterResponse,
+    demoUrl: "https://bereket12445-prioritize.hf.space/docs",
     featured: true,
     highlights: [
       "Prioritizes reports using wereda-level demographic risk factors",
@@ -141,6 +144,7 @@ export const projects: Project[] = [
     category: "Data",
     technologies: ["Power BI", "Python", "Pandas", "Scikit-learn", "SQL Server"],
     image: hrAnalytics,
+    githubUrl: "https://github.com/BereketTadesse/HR_Dashbord",
     featured: false,
     highlights: [
       "Comprehensive insights into employee demographics, promotions, and retrenchments",
