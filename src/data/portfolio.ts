@@ -1,6 +1,6 @@
 import customerAnalytics from "@/assets/projects/customer-analytics.png";
-import fraudDetection from "@/assets/projects/fraud-detection.png";
-import ragSupport from "@/assets/projects/rag-support.png";
+
+
 import disasterResponse from "@/assets/projects/disaster-response.png";
 import hrAnalytics from "@/assets/projects/hr-analytics.png";
 
@@ -13,7 +13,7 @@ export const personalInfo = {
   location: "Addis Ababa",
   github: "https://github.com/BereketTadesse",
   linkedin: "https://www.linkedin.com/in/bereket-tadesse-72b237232/",
-  cvUrl: "/cv.pdf",
+  cvUrl: "/Bereket-Tadesse-Eshete.pdf",
 };
 
 export type Project = {
@@ -21,7 +21,7 @@ export type Project = {
   title: string;
   description: string;
   longDescription: string;
-  category: "AI/ML" | "GenAI" | "Full-Stack" | "Data";
+  category: "AI/ML" | "GenAI" | "Data";
   technologies: string[];
   image: string;
   featured: boolean;
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title: "Customer Experience Analytics for Fintech Apps",
     description: "Data engineering and analysis project evaluating customer satisfaction with mobile banking apps from three major Ethiopian banks.",
     longDescription: "This project contains complete data engineering and analysis for evaluating customer satisfaction with mobile banking apps from three major Ethiopian banks: Commercial Bank of Ethiopia (CBE), Bank of Abyssinia (BOA), and Dashen Bank. The project simulates the role of a Data Analyst at Omega Consultancy, a firm advising these banks on how to improve their digital offerings. The analysis includes sentiment analysis, theme extraction, rating distribution analysis, and actionable insights to help banks enhance their mobile banking experience.",
-    category: "AI/ML",
+    category: "Data",
     technologies: ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL", "Docker"],
     image: customerAnalytics,
     featured: true,
@@ -56,106 +56,81 @@ export const projects: Project[] = [
       "/fintec_analysis/insight_2_unique_disadvantages_filtered.png",
     ],
   },
-  {
-    id: "fraud-detection",
-    title: "Fraud Detection for E-commerce & Bank Transactions",
-    description: "ML-based anomaly detection system achieving 98% precision in identifying fraudulent transactions.",
-    longDescription: "Developed a sophisticated fraud detection system using ensemble methods and deep learning. The system analyzes transaction patterns in real-time and flags suspicious activities with explainable AI components.",
-    category: "AI/ML",
-    technologies: ["Python", "XGBoost", "PyTorch", "Scikit-learn", "AWS", "MongoDB"],
-    image: fraudDetection,
-    featured: true,
-    highlights: [
-      "98% precision with 0.1% false positive rate",
-      "Processes 10K+ transactions per minute",
-      "Saved $2M+ in potential fraud losses",
-    ],
-  },
+
   {
     id: "rag-support-system",
-    title: "RAG Support System",
-    description: "AI-powered customer support chatbot using Retrieval-Augmented Generation for context-aware responses.",
-    longDescription: "Implemented a RAG-based support system that combines company documentation with LLM capabilities. The system provides accurate, contextual responses while reducing support ticket volume.",
+    title: "CrediTrust Complaints Intelligence (RAG Chatbot)",
+    description: "AI assistant turning unstructured customer complaints into evidence-backed insights using semantic search and Gemini LLM.",
+    longDescription: "Built an internal AI assistant that turns thousands of unstructured customer complaints into instant, evidence-backed insights for product, support, and compliance teams. The system uses semantic search (ChromaDB + SentenceTransformers) to retrieve relevant complaint narratives and Gemini LLM to generate grounded answers, reducing trend discovery time from days to minutes.",
     category: "GenAI",
-    technologies: ["LangChain", "OpenAI", "Pinecone", "Next.js", "Node.js", "PostgreSQL"],
-    image: ragSupport,
+    technologies: ["React", "FastAPI", "ChromaDB", "SentenceTransformers", "Google Gemini API", "Python"],
+    image: "/credit.png",
     featured: true,
     highlights: [
-      "40% reduction in support tickets",
-      "95% user satisfaction rate",
-      "Sub-2 second response times",
+      "Semantic search with ChromaDB & SentenceTransformers",
+      "Grounded answers using Google Gemini API",
+      "Reduced trend discovery time from days to minutes",
     ],
   },
   {
     id: "disaster-response-platform",
-    title: "Crowdsourced Disaster Response Platform",
-    description: "Real-time coordination platform connecting volunteers, resources, and affected communities.",
-    longDescription: "Built a full-stack platform for disaster response coordination featuring real-time mapping, resource tracking, and volunteer management. Includes mobile-responsive UI and offline capabilities.",
-    category: "Full-Stack",
-    technologies: ["React", "Node.js", "PostgreSQL", "Socket.io", "Mapbox", "Docker"],
+    title: "CDRP Disaster Evidence Verifier (Image ↔ Incident Match Model)",
+    description: "ML-powered verification service checking whether user-uploaded images match reported disaster types to reduce misinformation.",
+    longDescription: "Built an ML-powered verification service for a Crowdsourced Disaster Response Platform (CDRP) in Ethiopia that checks whether a user-uploaded image matches the reported disaster type. Trained a TensorFlow model on scraped disaster images and exposed it through a FastAPI API—helping reduce misinformation and improve data quality for government response workflows.",
+    category: "AI/ML",
+    technologies: ["TensorFlow", "Keras", "FastAPI", "Python", "NumPy", "Pillow", "scikit-learn"],
     image: disasterResponse,
     featured: true,
     highlights: [
-      "Coordinated 500+ volunteers in pilot deployment",
-      "Real-time mapping with offline sync",
-      "Multi-language support for 5 languages",
+      "Supported types: Drought, Earthquake, Flood, Hailstorm, Landslide, Locust, Sinkhole, Volcano, Wildfire",
+      "ML-powered image verification with confidence scoring",
+      "Reduces misinformation for government disaster response workflows",
     ],
   },
   {
-    id: "koket-habesha-dress",
-    title: "Koket Habesha Dress",
-    description: "Ethiopian cultural clothes e-commerce website showcasing Koket's traditional and casual clothing designs.",
-    longDescription: "A full-stack e-commerce website for Koket Habesha Dress, featuring Ethiopian cultural and casual clothing. The platform showcases Koket's product designs with an elegant portfolio section displaying their cultural and casual clothes collection. The website includes an About page highlighting the brand's story and a comprehensive portfolio gallery showcasing their work.",
-    category: "Full-Stack",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
-    image: "/koket/koket.png",
+    id: "disaster-triage-agent",
+    title: "CDRP Disaster Triage Agent (Gemini + Demographic Risk Ranking)",
+    description: "AI agent prioritizing disaster reports based on wereda-level demographics and population density to help responders allocate attention.",
+    longDescription: "Built an AI agent for Ethiopia’s Crowdsourced Disaster Response Platform (CDRP) that prioritizes incoming disaster reports using wereda-level demographics (total population, children, elders, women) and population density. The service reverse-geocodes GPS coordinates to a wereda, matches it to a demographic dataset, and uses Gemini to classify incidents as Urgent / Medium / Not Urgent with a clear reason.",
+    category: "GenAI",
+    technologies: ["FastAPI", "Gemini API", "Pandas", "Geopy", "FuzzyWuzzy", "Python"],
+    image: disasterResponse,
     featured: true,
     highlights: [
-      "Showcases Ethiopian cultural and casual clothing designs",
-      "Portfolio gallery displaying Koket's work and products",
-      "About page featuring the brand's story and mission",
+      "Prioritizes reports using wereda-level demographic risk factors",
+      "Reverse-geocoding (Nominatim) with fuzzy matching fallbacks",
+      "AI-driven classification (Urgent/Medium/Low) using Google Gemini API",
     ],
-    demoUrl: "https://kokihabeshadress.vercel.app/",
-    images: [
-      "/koket/koket.png",
+  },
+
+  {
+    id: "etraincon-quiz-generator",
+    title: "Etraincon AI Quiz Generator (PDF → MCQ + Open-Ended)",
+    description: "AI service for the Etraincon LMS that generates full quizzes from course materials with 50/50 MCQ and open-ended questions.",
+    longDescription: "Built an AI service for the Etraincon LMS as part of the Green Value Groups (GVG) team that generates full quizzes from uploaded course materials. The system extracts text from PDFs, chunks content semantically, retrieves relevant sections using FAISS, and uses Gemini to generate a balanced quiz (50% MCQ, 50% open-ended) including correct answers and explanations.",
+    category: "GenAI",
+    technologies: ["FastAPI", "Gemini API", "SentenceTransformers", "FAISS", "PyMuPDF", "Python", "NumPy", "asyncio"],
+    image: "/Etraincon.jpg",
+    featured: true,
+    highlights: [
+      "Work developed as part of GVG (Green Value Groups)",
+      "Generates balanced 50/50 MCQ and Open-Ended quizzes",
+      "Semantic search with FAISS for relevant question generation",
     ],
   },
   {
-    id: "muday-marketing-solution",
-    title: "Muday Marketing Solution",
-    description: "Full-stack website for a globally-oriented marketing firm showcasing services, portfolio, and company story for businesses worldwide.",
-    longDescription: "Built a comprehensive full-stack website for Muday Marketing Solution, a globally-oriented marketing firm founded in Ethiopia. The website features an interactive interface that showcases Muday's digital marketing services, displays their portfolio of completed work and projects, and includes a compelling storytelling section that narrates the company's journey from where they began to where they are now. The platform presents Muday as an investment partner, highlighting their mission to transform client investments into measurable growth through smart, targeted marketing solutions tailored for global markets.",
-    category: "Full-Stack",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Node.js", "PostgreSQL"],
-    image: "/muday/muday.png",
+    id: "etraincon-answer-grader",
+    title: "Etraincon Meaning-Based Answer Grader (Gemini Scoring API)",
+    description: "Automated grading service evaluating student answers against core meanings of reference answers with detailed scoring and reasoning.",
+    longDescription: "Built an automated grading service as part of the GVG (Green Value Groups) team for the Etraincon LMS. The API evaluates whether a student's answer matches the core meaning of a reference answer, rather than just exact wording. It returns a score (0–1), verdict (Correct/Partial/Incorrect), reasons, and matched/missed key points, featuring caching and strict JSON outputs for seamless integration into the Etraincon quiz workflow.",
+    category: "GenAI",
+    technologies: ["FastAPI", "Gemini API", "Pydantic", "Python", "dotenv", "CORS", "Caching"],
+    image: "/Etraincon.jpg",
     featured: true,
     highlights: [
-      "Interactive website showcasing Muday's services and portfolio of completed work",
-      "Portfolio section displaying the works and projects Muday has accomplished",
-      "Storytelling section narrating Muday's journey from where they began to where they are now",
-    ],
-    demoUrl: "https://muday-marketing.vercel.app/",
-    images: [
-      "/muday/muday.png",
-    ],
-  },
-  {
-    id: "pavepath-design",
-    title: "PavePath Design",
-    description: "Full-stack website for a drafting-focused studio showcasing services, portfolio, and company information for civil and transportation engineering teams.",
-    longDescription: "Built a comprehensive full-stack website for PavePath Design, a drafting-focused studio supporting civil and transportation engineering teams. The website features an interactive interface that showcases the company's services, displays their portfolio of completed projects, and provides detailed information about their expertise in CAD production. The platform includes an About Us section highlighting the company's journey, statistics showcasing their experience and achievements, and a clean, professional design that reflects their focus on accuracy and consistency in drafting services.",
-    category: "Full-Stack",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Next.js", "Node.js"],
-    image: "/pave/pave.png",
-    featured: true,
-    highlights: [
-      "Interactive website showcasing company services and portfolio of completed projects",
-      "About Us section narrating PavePath Design's journey and expertise",
-      "Statistics display highlighting years of experience, projects delivered, and team expertise",
-    ],
-    demoUrl: "https://pavepath-design.vercel.app/",
-    images: [
-      "/pave/pave.png",
+      "Work developed as part of GVG (Green Value Groups)",
+      "Meaning-based scoring (0-1 range) with AI-generated reasoning",
+      "Returns detailed verdict and matched/missed key points",
     ],
   },
   {
@@ -210,10 +185,6 @@ export const skills: Skill[] = [
     name: "Databases",
     items: ["PostgreSQL", "MySQL", "MongoDB", "Oracle XE"],
   },
-  {
-    name: "DevOps",
-    items: ["Docker", "AWS", "Streamlit", "Git"],
-  },
 ];
 
 export type Experience = {
@@ -223,20 +194,22 @@ export type Experience = {
   description: string;
   highlights: string[];
   current: boolean;
+  location?: string;
 };
 
 export const experiences: Experience[] = [
   {
-    title: "Machine Learning Engineer",
-    company: "Green Investment Groups",
+    title: "ML Engineer & Full-Stack Developer",
+    company: "Green Value Groups",
     period: "Jul 2025 – Present",
-    description: "Leading ML initiatives for sustainable investment analytics and ESG scoring systems.",
+    description: "Building intelligent systems with interactive and attractive designs, integrating ML models with full-stack applications.",
     highlights: [
-      "Developing ML models for ESG risk assessment",
-      "Building data pipelines for financial analytics",
-      "Collaborating with cross-functional teams on AI strategy",
+      "Crafting highly interactive and visually attractive user interfaces with React and Tailwind",
+      "Building robust, well-structured backend architectures using FastAPI and scalable databases",
+      "Designing and deploying intelligent ML agents and RAG pipelines using Gemini & TensorFlow",
     ],
     current: true,
+    location: "Addis Ababa, Ethiopia",
   },
   {
     title: "Front-End Developer Intern",
@@ -249,6 +222,7 @@ export const experiences: Experience[] = [
       "Improved user experience based on feedback analysis",
     ],
     current: false,
+    location: "Bale Robe, Ethiopia",
   },
 ];
 

@@ -7,7 +7,7 @@ import { projects, Project } from "@/data/portfolio";
 import { Input } from "@/components/ui/input";
 import { Helmet } from "react-helmet-async";
 
-const categories = ["All", "AI/ML", "GenAI", "Full-Stack", "Data"];
+const categories = ["All", "AI/ML", "GenAI", "Data"];
 
 const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,7 +31,7 @@ const Projects = () => {
         <title>Projects | Bereket Tadesse</title>
         <meta
           name="description"
-          content="Explore my portfolio of AI/ML, GenAI, Full-Stack, and Data projects. From customer analytics to fraud detection systems."
+          content="Explore my portfolio of AI/ML, GenAI, and Data projects. From customer analytics to fraud detection systems."
         />
       </Helmet>
 
@@ -50,7 +50,7 @@ const Projects = () => {
               My Projects
             </h1>
             <p className="text-lg text-muted-foreground">
-              A collection of AI/ML systems, full-stack applications, and data
+              A collection of AI/ML systems, GenAI applications, and data
               solutions I've built.
             </p>
           </motion.div>
@@ -83,11 +83,10 @@ const Projects = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${selectedCategory === category
                       ? "bg-primary text-primary-foreground"
                       : "bg-secondary text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>

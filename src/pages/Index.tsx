@@ -24,7 +24,6 @@ const Index = () => {
       <Hero />
       <FeaturedProjects />
       <Skills />
-      <Experience />
       <CTA />
     </Layout>
   );

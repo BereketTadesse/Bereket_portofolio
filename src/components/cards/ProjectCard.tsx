@@ -9,7 +9,6 @@ interface ProjectCardProps {
 const categoryColors: Record<string, string> = {
   "AI/ML": "bg-blue-500/10 text-blue-400 border-blue-500/20",
   "GenAI": "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  "Full-Stack": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
   "Data": "bg-amber-500/10 text-amber-400 border-amber-500/20",
 };
 
@@ -29,9 +28,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
         <div className="absolute top-4 left-4">
           <span
-            className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${
-              categoryColors[project.category] || "bg-secondary text-secondary-foreground"
-            }`}
+            className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border backdrop-blur-sm ${categoryColors[project.category] || "bg-secondary text-secondary-foreground"
+              }`}
           >
             {project.category}
           </span>

@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { skills } from "@/data/portfolio";
-import { 
-  Brain, 
-  Sparkles, 
-  Monitor, 
-  Server, 
-  Database, 
-  BarChart3, 
-  Cloud 
+import {
+  Brain,
+  Sparkles,
+  Monitor,
+  Server,
+  Database,
+  BarChart3,
+  Cloud
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -22,7 +22,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export function Skills() {
   return (
-    <section className="section-padding bg-card/30 relative">
+    <section id="expertise" className="section-padding bg-card/30 relative scroll-mt-24">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div

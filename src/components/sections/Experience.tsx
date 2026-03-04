@@ -4,7 +4,7 @@ import { experiences } from "@/data/portfolio";
 
 export function Experience() {
   return (
-    <section className="section-padding bg-background relative">
+    <section id="experience" className="section-padding bg-background relative scroll-mt-24">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -43,11 +43,10 @@ export function Experience() {
 
               {/* Timeline dot */}
               <div
-                className={`absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                  experience.current
-                    ? "bg-primary border-primary"
-                    : "bg-card border-border"
-                }`}
+                className={`absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 flex items-center justify-center ${experience.current
+                  ? "bg-primary border-primary"
+                  : "bg-card border-border"
+                  }`}
               >
                 {experience.current && (
                   <div className="w-2 h-2 bg-primary-foreground rounded-full" />

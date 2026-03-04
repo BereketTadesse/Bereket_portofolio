@@ -57,7 +57,7 @@ const About = () => {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-transparent" />
                 <div className="absolute -inset-4 rounded-2xl border border-primary/10" />
                 <div className="absolute -inset-8 rounded-2xl border border-primary/5" />
-                
+
                 <div className="relative h-full w-full rounded-2xl bg-card border border-border overflow-hidden">
                   <img
                     src="/bereket.jpg"
@@ -128,42 +128,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Journey */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="font-display text-3xl font-bold text-foreground mb-8 text-center">
-              My Journey
-            </h2>
-            <div className="prose prose-invert max-w-none">
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                My journey into tech began with a fascination for how systems
-                learn and make decisions. This curiosity led me to dive deep
-                into machine learning, eventually expanding into full-stack
-                development to build complete products.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Today, I specialize in building AI-powered applications that
-                combine sophisticated ML models with intuitive user experiences.
-                From sentiment analysis systems to fraud detection platforms,
-                I've worked across various domains, always focusing on delivering
-                measurable business impact.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                When I'm not coding, you'll find me exploring the latest research
-                papers, contributing to open-source projects, or mentoring
-                aspiring developers in the community.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
     </Layout>
   );
 };
