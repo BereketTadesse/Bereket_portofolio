@@ -28,6 +28,7 @@ export type Project = {
   highlights: string[];
   demoUrl?: string;
   githubUrl?: string;
+  huggingFaceUrl?: string;
   images?: string[];
 };
 
@@ -81,7 +82,7 @@ export const projects: Project[] = [
     category: "AI/ML",
     technologies: ["TensorFlow", "Keras", "FastAPI", "Python", "NumPy", "Pillow", "scikit-learn"],
     image: disasterResponse,
-    demoUrl: "https://bereket12445-my-tf-image-model.hf.space/docs",
+    demoUrl: "https://cdrp-disaster-evidence-verifier.vercel.app/",
     featured: true,
     highlights: [
       "Supported types: Drought, Earthquake, Flood, Hailstorm, Landslide, Locust, Sinkhole, Volcano, Wildfire",
@@ -97,7 +98,8 @@ export const projects: Project[] = [
     category: "GenAI",
     technologies: ["FastAPI", "Gemini API", "Pandas", "Geopy", "FuzzyWuzzy", "Python"],
     image: disasterResponse,
-    demoUrl: "https://bereket12445-prioritize.hf.space/docs",
+    githubUrl: "https://github.com/BereketTadesse/CDRP_Disaster_riage_Agent.git",
+    huggingFaceUrl: "https://bereket12445-prioritize.hf.space/docs",
     featured: true,
     highlights: [
       "Prioritizes reports using wereda-level demographic risk factors",
