@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Calendar, Code, Brain, Rocket } from "lucide-react";
+import { MapPin, Calendar, Code, Brain, Rocket, Server } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { personalInfo, skills, experiences } from "@/data/portfolio";
 import { Helmet } from "react-helmet-async";
@@ -11,7 +11,7 @@ const About = () => {
         <title>About | Bereket Tadesse</title>
         <meta
           name="description"
-          content="Learn more about Bereket Tadesse - Machine Learning Engineer & Full-Stack Developer building intelligent products end-to-end."
+          content="Learn more about Bereket Tadesse - Backend Developer focused on building reliable APIs, scalable backend services, and database-driven applications."
         />
       </Helmet>
 
@@ -28,21 +28,22 @@ const About = () => {
                 About Me
               </span>
               <h1 className="font-display text-4xl sm:text-5xl font-bold text-foreground mb-6">
-                Building the future with{" "}
-                <span className="text-gradient">AI & Code</span>
+                Building scalable systems with{" "}
+                <span className="text-gradient">Backend & AI</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I'm {personalInfo.name}, a {personalInfo.title} passionate about
-                creating intelligent systems that solve real-world problems. I
-                combine deep technical expertise in machine learning with
-                full-stack development skills to build end-to-end solutions.
+                I'm Bereket Tadesse, a Backend Developer focused on building
+                reliable APIs, scalable backend services, and database-driven
+                applications. I work with NestJS, FastAPI, Node.js, PostgreSQL,
+                MongoDB, Redis, and Docker to turn product requirements into
+                maintainable backend systems.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                My approach bridges the gap between cutting-edge AI research and
-                practical product development. Whether it's building NLP
-                pipelines, designing scalable APIs, or crafting intuitive user
-                interfaces, I focus on delivering value at every layer of the
-                stack.
+                My work includes REST API development, authentication, database
+                design, webhook integrations, transaction processing, deployment,
+                and AI-powered backend features. I enjoy solving real-world
+                problems with clean architecture, practical engineering, and
+                systems that are easy to extend and maintain.
               </p>
             </motion.div>
 
@@ -89,22 +90,22 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                icon: Brain,
-                title: "AI Innovation",
+                icon: Server,
+                title: "Backend Engineering",
                 description:
-                  "Pushing boundaries in machine learning to create systems that learn, adapt, and deliver real impact.",
+                  "Building reliable, scalable backend systems with clean APIs, strong data models, secure integrations, and production-ready architecture.",
               },
               {
                 icon: Code,
                 title: "Clean Architecture",
                 description:
-                  "Writing maintainable, scalable code that stands the test of time and enables rapid iteration.",
+                  "Writing maintainable, testable, and scalable code that is easy to extend, debug, and evolve as products grow.",
               },
               {
                 icon: Rocket,
                 title: "Product Thinking",
                 description:
-                  "Building with the end user in mind, focusing on solutions that create genuine value.",
+                  "Building with real user and business needs in mind, focusing on practical solutions that create measurable value.",
               },
             ].map((value, index) => (
               <motion.div

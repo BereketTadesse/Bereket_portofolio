@@ -1,23 +1,21 @@
 import { motion } from "framer-motion";
 import { skills } from "@/data/portfolio";
 import {
-  Brain,
-  Sparkles,
-  Monitor,
   Server,
   Database,
-  BarChart3,
-  Cloud
+  Cloud,
+  ShieldCheck,
+  Sparkles,
+  Monitor,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
-  "AI/ML/NLP": <Brain className="w-5 h-5" />,
-  "GenAI": <Sparkles className="w-5 h-5" />,
-  "Frontend": <Monitor className="w-5 h-5" />,
   "Backend": <Server className="w-5 h-5" />,
-  "Data": <BarChart3 className="w-5 h-5" />,
   "Databases": <Database className="w-5 h-5" />,
-  "DevOps": <Cloud className="w-5 h-5" />,
+  "DevOps & Deployment": <Cloud className="w-5 h-5" />,
+  "API & Security": <ShieldCheck className="w-5 h-5" />,
+  "AI Integration": <Sparkles className="w-5 h-5" />,
+  "Frontend": <Monitor className="w-5 h-5" />,
 };
 
 export function Skills() {
@@ -39,12 +37,12 @@ export function Skills() {
             Technical Skills
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit spanning the full ML and development lifecycle
+            A comprehensive toolkit for building scalable backend architectures, robust APIs, and secure web systems
           </p>
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}

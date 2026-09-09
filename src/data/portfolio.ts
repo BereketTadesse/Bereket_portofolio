@@ -1,27 +1,25 @@
-import customerAnalytics from "@/assets/projects/customer-analytics.png";
-
-
 import disasterResponse from "@/assets/projects/disaster-response.png";
-import hrAnalytics from "@/assets/projects/hr-analytics.png";
 
 export const personalInfo = {
   name: "Bereket Tadesse",
-  title: "Machine Learning Engineer & Full-Stack Developer",
-  tagline: "I build intelligent products end-to-end — from clean UI to scalable APIs to ML-powered insights.",
-  shortTagline: "From UI to APIs to ML models.",
+  title: "Backend Developer",
+  tagline: "I transform ideas into enterprise-grade backend systems that are fast, secure, scalable, and easy to maintain.",
+  shortTagline: "Building scalable APIs & backend services.",
   email: "berekettadesse1244@gmail.com",
   location: "Addis Ababa",
   github: "https://github.com/BereketTadesse",
   linkedin: "https://www.linkedin.com/in/bereket-tadesse-72b237232/",
-  cvUrl: "/Bereket-Tadesse-Eshete.pdf",
+  telegram: "https://t.me/Building_in_Public_6",
+  cvUrl: "/Bereket_Tadesse_Tadesse_B.pdf",
 };
 
 export type Project = {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   longDescription: string;
-  category: "AI/ML" | "GenAI" | "Data";
+  category: string;
   technologies: string[];
   image: string;
   featured: boolean;
@@ -34,44 +32,83 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "customer-experience-analytics",
-    title: "Customer Experience Analytics for Fintech Apps",
-    description: "Data engineering and analysis project evaluating customer satisfaction with mobile banking apps from three major Ethiopian banks.",
-    longDescription: "This project contains complete data engineering and analysis for evaluating customer satisfaction with mobile banking apps from three major Ethiopian banks: Commercial Bank of Ethiopia (CBE), Bank of Abyssinia (BOA), and Dashen Bank. The project simulates the role of a Data Analyst at Omega Consultancy, a firm advising these banks on how to improve their digital offerings. The analysis includes sentiment analysis, theme extraction, rating distribution analysis, and actionable insights to help banks enhance their mobile banking experience.",
-    category: "Data",
-    technologies: ["Python", "TensorFlow", "FastAPI", "React", "PostgreSQL", "Docker"],
-    image: customerAnalytics,
-    githubUrl: "https://github.com/BereketTadesse/Customer_Experience_Analytics_for_Fintech_Apps.git",
+    id: "expense-tracker-api",
+    title: "Expense Tracker API",
+    subtitle: "Automated Personal Finance Backend for Ethiopian Banking",
+    description: "Production-oriented backend system that captures, parses, and organizes bank and mobile-wallet transactions into structured financial records, budgets, and analytics.",
+    longDescription: "Built a production-oriented personal finance API using NestJS, TypeScript, PostgreSQL, and TypeORM. The system automatically ingests transaction SMS messages from Ethiopian banks and mobile wallets such as CBE, Telebirr, Bank of Abyssinia, and Dashen Bank, then converts them into structured financial records. It includes secure authentication, webhook processing, concurrency-safe balance updates, budgeting, analytics, and Dockerized deployment.",
+    category: "BACKEND / FINTECH",
+    technologies: ["NestJS", "TypeScript", "Node.js", "PostgreSQL", "TypeORM", "JWT", "Docker", "REST APIs", "Resend API"],
+    image: "/expense_tracker/photo_2026-09-09_22-25-14.jpg",
+    githubUrl: "https://github.com/BereketTadesse/expense-tracker-api",
     featured: true,
     highlights: [
-      "App Experience Inconsistency: Dashen Bank offers reliable positive experience, while BOA's app is extremely polarized, and CBE has strong core but significant edge case issues",
-      "Transaction Performance is Critical: The most dominant reason for negative reviews across all three banks is poor transaction reliability and speed",
-      "UI is the Key Strength: High-quality User Interface & Experience was the most common driver of satisfaction for all banks",
+      "Automated SMS transaction ingestion for Ethiopian banks and mobile wallets",
+      "JWT authentication, secure webhook tokens, and HMAC signature verification",
+      "Idempotent transaction processing to prevent duplicate financial records",
+      "Concurrency-safe account balance updates and internal transfers",
+      "Cursor-based pagination and advanced transaction filtering",
+      "Budget tracking with warning and exceeded states",
+      "Financial analytics for income, expenses, savings, categories, and trends",
+      "Docker and Docker Compose support",
     ],
     images: [
-      "/fintec_analysis/1_sentiment_by_bank.png",
-      "/fintec_analysis/2_themes_by_bank_clean.png",
-      "/fintec_analysis/3_rating_distribution.png",
-      "/fintec_analysis/advanced_4_kiss_of_death_themes.png",
-      "/fintec_analysis/insight_1_rating_polarization.png",
-      "/fintec_analysis/insight_2_unique_advantages_filtered.png",
-      "/fintec_analysis/insight_2_unique_disadvantages_filtered.png",
+      "/expense_tracker/photo_2026-09-09_22-25-14.jpg",
+      "/expense_tracker/photo_2026-09-09_22-25-36.jpg",
+      "/expense_tracker/photo_2026-09-09_22-25-43.jpg",
+      "/expense_tracker/photo_2026-09-09_22-25-49.jpg",
     ],
   },
-
   {
-    id: "rag-support-system",
-    title: "CrediTrust Complaints Intelligence (RAG Chatbot)",
-    description: "AI assistant turning unstructured customer complaints into evidence-backed insights using semantic search and Gemini LLM.",
-    longDescription: "Built an internal AI assistant that turns thousands of unstructured customer complaints into instant, evidence-backed insights for product, support, and compliance teams. The system uses semantic search (ChromaDB + SentenceTransformers) to retrieve relevant complaint narratives and Gemini LLM to generate grounded answers, reducing trend discovery time from days to minutes.",
-    category: "GenAI",
-    technologies: ["React", "FastAPI", "ChromaDB", "SentenceTransformers", "Google Gemini API", "Python"],
-    image: "/credit.png",
+    id: "weg-blog",
+    title: "Weg Blog",
+    subtitle: "Social Blogging Backend API",
+    description: "Backend API for a social blogging platform supporting posts, comments, likes, follower relationships, and scalable content feeds.",
+    longDescription: "Built a modular backend for a social blogging platform using Node.js, Express.js, MongoDB, and Mongoose. The system supports user-generated posts, nested comments, likes, follower relationships, and content interactions through a structured controller, model, route, middleware, and utility architecture. Cursor-based pagination was implemented to support scalable content feeds and reduce database and network overhead.",
+    category: "BACKEND / SOCIAL PLATFORM",
+    technologies: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JavaScript", "REST APIs", "Git"],
+    image: "/weg_blog/photo_2026-09-09_22-25-54.jpg",
+    githubUrl: "https://github.com/BereketTadesse/weg_Blog",
     featured: true,
     highlights: [
-      "Semantic search with ChromaDB & SentenceTransformers",
-      "Grounded answers using Google Gemini API",
-      "Reduced trend discovery time from days to minutes",
+      "REST API architecture using Node.js and Express.js",
+      "MongoDB data modeling with Mongoose",
+      "Posts, comments, likes, and follower relationships",
+      "Modular controller, model, route, middleware, and utility layers",
+      "Cursor-based pagination for scalable content feeds",
+      "Backend middleware for request handling and application logic",
+      "Structured architecture designed for maintainability and extension",
+    ],
+    images: [
+      "/weg_blog/photo_2026-09-09_22-25-54.jpg",
+      "/weg_blog/photo_2026-09-09_22-26-08.jpg",
+      "/weg_blog/photo_2026-09-09_22-26-13.jpg",
+      "/weg_blog/photo_2026-09-09_22-26-18.jpg",
+    ],
+  },
+  {
+    id: "mihret-multimedia",
+    title: "Mihret Multimedia & Film Production",
+    subtitle: "Modern Web Platform for Film & Media Production",
+    description: "A modern, fast, and visually engaging web platform showcasing the film works, creative services, and production team of Mihret Multimedia.",
+    longDescription: "Built a production-grade web platform for Mihret Multimedia and Film Production to showcase their films, creative services, and talented team in a clean, professional, and visually engaging way. Used Google Stitch to explore and shape the UI/UX design direction, then developed the site using React, TypeScript, Tailwind CSS, React Router, and Vite, with deployment on Yegara. Designed with a strong focus on responsiveness and cross-browser compatibility across all modern devices.",
+    category: "Frontend",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "React Router", "Vite", "Google Stitch", "Yegara"],
+    image: "/mihret_multimedia/home.jpeg",
+    demoUrl: "https://mihretmultimedia.com/",
+    featured: true,
+    highlights: [
+      "Modern web platform built for Mihret Multimedia and Film Production",
+      "Interactive showcase for creative services, film catalog, and production team",
+      "UI/UX exploration and design direction crafted with Google Stitch",
+      "Built with React, TypeScript, Tailwind CSS, and Vite",
+      "Responsive, cross-browser optimized, and deployed on Yegara hosting",
+    ],
+    images: [
+      "/mihret_multimedia/home.jpeg",
+      "/mihret_multimedia/service.jpeg",
+      "/mihret_multimedia/portfolio.jpeg",
+      "/mihret_multimedia/our_team.jpeg",
     ],
   },
   {
@@ -90,24 +127,6 @@ export const projects: Project[] = [
       "Reduces misinformation for government disaster response workflows",
     ],
   },
-  {
-    id: "disaster-triage-agent",
-    title: "CDRP Disaster Triage Agent (Gemini + Demographic Risk Ranking)",
-    description: "AI agent prioritizing disaster reports based on wereda-level demographics and population density to help responders allocate attention.",
-    longDescription: "Built an AI agent for Ethiopia’s Crowdsourced Disaster Response Platform (CDRP) that prioritizes incoming disaster reports using wereda-level demographics (total population, children, elders, women) and population density. The service reverse-geocodes GPS coordinates to a wereda, matches it to a demographic dataset, and uses Gemini to classify incidents as Urgent / Medium / Not Urgent with a clear reason.",
-    category: "GenAI",
-    technologies: ["FastAPI", "Gemini API", "Pandas", "Geopy", "FuzzyWuzzy", "Python"],
-    image: disasterResponse,
-    githubUrl: "https://github.com/BereketTadesse/CDRP_Disaster_riage_Agent.git",
-    huggingFaceUrl: "https://bereket12445-prioritize.hf.space/docs",
-    featured: true,
-    highlights: [
-      "Prioritizes reports using wereda-level demographic risk factors",
-      "Reverse-geocoding (Nominatim) with fuzzy matching fallbacks",
-      "AI-driven classification (Urgent/Medium/Low) using Google Gemini API",
-    ],
-  },
-
   {
     id: "etraincon-quiz-generator",
     title: "Etraincon AI Quiz Generator (PDF → MCQ + Open-Ended)",
@@ -138,27 +157,6 @@ export const projects: Project[] = [
       "Returns detailed verdict and matched/missed key points",
     ],
   },
-  {
-    id: "hr-analytics-dashboard",
-    title: "HR Analytics Dashboard",
-    description: "Comprehensive Power BI dashboard providing actionable insights into employee demographics, promotions, retrenchments, satisfaction, and job roles.",
-    longDescription: "This project presents a comprehensive HR Analytics Dashboard created using Power BI, based on cleaned and curated HR data. It provides actionable insights into employee demographics, promotions, retrenchments, satisfaction levels, job roles, and more. The dashboard is designed for HR departments to make informed decisions quickly through visual storytelling and interaction.",
-    category: "Data",
-    technologies: ["Power BI", "Python", "Pandas", "Scikit-learn", "SQL Server"],
-    image: hrAnalytics,
-    githubUrl: "https://github.com/BereketTadesse/HR_Dashbord",
-    featured: false,
-    highlights: [
-      "Comprehensive insights into employee demographics, promotions, and retrenchments",
-      "Visual storytelling and interactive dashboard for quick decision-making",
-      "Cleaned and curated HR data for accurate analytics",
-    ],
-    images: [
-      "/hr_analysis/home.png",
-      "/hr_analysis/detail.png",
-      "/hr_analysis/action.png",
-    ],
-  },
 ];
 
 export type Skill = {
@@ -168,28 +166,28 @@ export type Skill = {
 
 export const skills: Skill[] = [
   {
-    name: "AI/ML/NLP",
-    items: ["Scikit-learn", "TensorFlow", "PyTorch", "XGBoost"],
+    name: "Backend",
+    items: ["NestJS", "Node.js", "Express", "FastAPI", "REST APIs", "TypeScript", "Python"],
   },
   {
-    name: "GenAI",
-    items: ["OpenAI APIs", "LangChain", "Gemini", "RAG"],
+    name: "Databases",
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "TypeORM", "Prisma", "Mongoose", "Drizzle"],
+  },
+  {
+    name: "DevOps & Deployment",
+    items: ["Docker", "GitHub Actions", "Git", "CI/CD", "Render", "Vercel"],
+  },
+  {
+    name: "API & Security",
+    items: ["JWT Auth", "Webhooks", "HMAC", "API Integration", "Validation", "Caching", "Pagination"],
+  },
+  {
+    name: "AI Integration",
+    items: ["OpenAI APIs", "Gemini", "LangChain", "RAG", "ML Model Integration"],
   },
   {
     name: "Frontend",
     items: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    name: "Backend",
-    items: ["FastAPI", "Flask", "Node.js", "Express", "REST APIs"],
-  },
-  {
-    name: "Data",
-    items: ["Pandas", "NumPy", "Plotly", "Power BI"],
-  },
-  {
-    name: "Databases",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Oracle XE"],
   },
 ];
 
@@ -205,27 +203,47 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    title: "ML Engineer & Full-Stack Developer",
-    company: "Green Value Groups",
-    period: "Jul 2025 – Present",
-    description: "Building intelligent systems with interactive and attractive designs, integrating ML models with full-stack applications.",
+    title: "Backend Developer",
+    company: "Lersha Green Agro Solution",
+    period: "Jul 2026 – Present",
+    description:
+      "Building backend solutions for an AgriTech platform that connects smallholder farmers with agro-dealers, wholesalers, financial institutions, and agricultural service providers.",
     highlights: [
-      "Crafting highly interactive and visually attractive user interfaces with React and Tailwind",
-      "Building robust, well-structured backend architectures using FastAPI and scalable databases",
-      "Designing and deploying intelligent ML agents and RAG pipelines using Gemini & TensorFlow",
+      "Building and maintaining backend services using NestJS and FastAPI",
+      "Developing REST APIs for farmer, partner, and marketplace workflows",
+      "Contributing to integrations that connect farmers with suppliers, buyers, and financial services",
+      "Supporting scalable backend architecture for digital agriculture and financing workflows",
     ],
     current: true,
     location: "Addis Ababa, Ethiopia",
   },
   {
+    title: "Backend Developer & Machine Learning Engineer",
+    company: "Green Value Groups",
+    period: "Aug 2025 – Apr 2026",
+    description:
+      "Worked on backend systems and machine-learning projects, integrating APIs, databases, and ML-powered features into web applications.",
+    highlights: [
+      "Built and integrated REST APIs using Node.js and Express.js",
+      "Worked with PostgreSQL, MySQL, and MongoDB",
+      "Designed schemas and queries using Prisma and Drizzle",
+      "Integrated machine-learning models into backend services",
+      "Used Docker and GitHub Actions for CI/CD and deployment",
+    ],
+    current: false,
+    location: "Addis Ababa, Ethiopia",
+  },
+  {
     title: "Front-End Developer Intern",
     company: "Madda Walabu University",
-    period: "2024",
-    description: "Designed and developed web applications for academic management systems.",
+    period: "Jul 2024 – Sep 2024",
+    description:
+      "Developed responsive web interfaces and integrated frontend applications with backend APIs for university systems.",
     highlights: [
-      "Built responsive UIs with React and Tailwind CSS",
-      "Implemented REST API integrations",
-      "Improved user experience based on feedback analysis",
+      "Built responsive interfaces using React and TypeScript",
+      "Integrated frontend features with REST APIs",
+      "Participated in integration testing and troubleshooting",
+      "Collaborated with backend teams to ensure reliable data flow",
     ],
     current: false,
     location: "Bale Robe, Ethiopia",

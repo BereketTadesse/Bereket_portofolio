@@ -41,7 +41,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary text-sm font-medium tracking-wide">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            AVAILABLE FOR NEW PROJECTS
+            Backend Developer
           </span>
         </motion.div>
 
@@ -54,10 +54,10 @@ export function Hero() {
         >
           <h1 className="font-display font-bold leading-[1.05]">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white">
-              I build
+              Building
             </span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-primary">
-              Solutions
+              Scalable APIs
             </span>
           </h1>
         </motion.div>
@@ -67,7 +67,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg text-muted-foreground max-w-lg mb-10 leading-relaxed"
+          className="text-base sm:text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed"
         >
           {personalInfo.tagline}
         </motion.p>

@@ -7,7 +7,7 @@ import { projects, Project } from "@/data/portfolio";
 import { Input } from "@/components/ui/input";
 import { Helmet } from "react-helmet-async";
 
-const categories = ["All", "AI/ML", "GenAI", "Data"];
+const categories = ["All", "Backend", "Frontend", "AI/ML", "GenAI"];
 
 const Projects = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +21,10 @@ const Projects = () => {
         tech.toLowerCase().includes(searchQuery.toLowerCase())
       );
     const matchesCategory =
-      selectedCategory === "All" || project.category === selectedCategory;
+      selectedCategory === "All" ||
+      project.category === selectedCategory ||
+      (selectedCategory === "Backend" && project.category.toUpperCase().includes("BACKEND")) ||
+      (selectedCategory === "Frontend" && project.category.toUpperCase().includes("FRONTEND"));
     return matchesSearch && matchesCategory;
   });
 
@@ -31,7 +34,7 @@ const Projects = () => {
         <title>Projects | Bereket Tadesse</title>
         <meta
           name="description"
-          content="Explore my portfolio of AI/ML, GenAI, and Data projects. From customer analytics to fraud detection systems."
+          content="Explore my portfolio of Backend, Frontend, and AI projects. From scalable APIs to production web applications."
         />
       </Helmet>
 

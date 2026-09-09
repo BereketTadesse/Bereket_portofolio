@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/data/portfolio";
+import { TelegramIcon } from "@/components/icons/TelegramIcon";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -67,9 +68,21 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-white/50 hover:text-white transition-colors duration-300"
+              title="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
             </a>
+            {personalInfo.telegram && (
+              <a
+                href={personalInfo.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg text-white/50 hover:text-white transition-colors duration-300"
+                title="Telegram Channel"
+              >
+                <TelegramIcon className="w-4 h-4" />
+              </a>
+            )}
             <Button variant="hero" size="sm" asChild>
               <a href={personalInfo.cvUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Download className="w-3.5 h-3.5" />
@@ -139,6 +152,17 @@ export function Navbar() {
                   >
                     <Linkedin className="w-5 h-5" />
                   </a>
+                  {personalInfo.telegram && (
+                    <a
+                      href={personalInfo.telegram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg text-white/50 hover:text-white transition-all"
+                      title="Telegram Channel"
+                    >
+                      <TelegramIcon className="w-5 h-5" />
+                    </a>
+                  )}
                   <a
                     href={`mailto:${personalInfo.email}`}
                     className="p-2 rounded-lg text-white/50 hover:text-white transition-all"

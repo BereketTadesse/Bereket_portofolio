@@ -7,9 +7,12 @@ interface ProjectCardProps {
 }
 
 const categoryColors: Record<string, string> = {
+  "BACKEND / FINTECH": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  "BACKEND / SOCIAL PLATFORM": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+  "Backend": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  "Frontend": "bg-rose-500/10 text-rose-400 border-rose-500/20",
   "AI/ML": "bg-blue-500/10 text-blue-400 border-blue-500/20",
   "GenAI": "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  "Data": "bg-amber-500/10 text-amber-400 border-amber-500/20",
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -23,6 +26,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <img
           src={project.image}
           alt={project.title}
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+          }}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
@@ -43,9 +49,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+        <h3 className="font-display text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300 line-clamp-2">
           {project.title}
         </h3>
+        {project.subtitle && (
+          <p className="text-xs font-medium text-primary mb-2 line-clamp-1">
+            {project.subtitle}
+          </p>
+        )}
         <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-grow line-clamp-2">
           {project.description}
         </p>

@@ -10,15 +10,15 @@ const Index = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Bereket Tadesse | ML Engineer & Full-Stack Developer</title>
+        <title>Bereket Tadesse | Backend Developer</title>
         <meta
           name="description"
-          content="I build intelligent products end-to-end — from clean UI to scalable APIs to ML-powered insights. Machine Learning Engineer & Full-Stack Developer."
+          content="I transform ideas into enterprise-grade backend systems that are fast, secure, scalable, and easy to maintain."
         />
-        <meta property="og:title" content="Bereket Tadesse | ML Engineer & Full-Stack Developer" />
+        <meta property="og:title" content="Bereket Tadesse | Backend Developer" />
         <meta
           property="og:description"
-          content="I build intelligent products end-to-end — from clean UI to scalable APIs to ML-powered insights."
+          content="I transform ideas into enterprise-grade backend systems that are fast, secure, scalable, and easy to maintain."
         />
       </Helmet>
       <Hero />

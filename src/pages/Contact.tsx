@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { personalInfo } from "@/data/portfolio";
+import { TelegramIcon } from "@/components/icons/TelegramIcon";
 import { useToast } from "@/hooks/use-toast";
 import { Helmet } from "react-helmet-async";
 
@@ -153,9 +154,21 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="glow-card p-4 group"
+                    title="LinkedIn"
                   >
                     <Linkedin className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
                   </a>
+                  {personalInfo.telegram && (
+                    <a
+                      href={personalInfo.telegram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="glow-card p-4 group"
+                      title="Telegram Channel"
+                    >
+                      <TelegramIcon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

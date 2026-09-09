@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { TelegramIcon } from "@/components/icons/TelegramIcon";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -62,9 +63,21 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-lg bg-secondary text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all duration-300"
+                title="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
+              {personalInfo.telegram && (
+                <a
+                  href={personalInfo.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 rounded-lg bg-secondary text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all duration-300"
+                  title="Telegram Channel"
+                >
+                  <TelegramIcon className="w-5 h-5" />
+                </a>
+              )}
               <a
                 href={`mailto:${personalInfo.email}`}
                 className="p-2.5 rounded-lg bg-secondary text-muted-foreground hover:text-primary hover:bg-secondary/80 transition-all duration-300"

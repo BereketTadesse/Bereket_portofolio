@@ -8,9 +8,12 @@ import { projects } from "@/data/portfolio";
 import { Helmet } from "react-helmet-async";
 
 const categoryColors: Record<string, string> = {
+  "BACKEND / FINTECH": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  "BACKEND / SOCIAL PLATFORM": "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+  "Backend": "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+  "Frontend": "bg-rose-500/10 text-rose-400 border-rose-500/20",
   "AI/ML": "bg-blue-500/10 text-blue-400 border-blue-500/20",
   "GenAI": "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  "Data": "bg-amber-500/10 text-amber-400 border-amber-500/20",
 };
 
 const ProjectDetail = () => {
@@ -34,37 +37,26 @@ const ProjectDetail = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{project.title} | Bereket Tadesse</title>
+        <title>{`${project.title} | Bereket Tadesse`}</title>
         <meta name="description" content={project.description} />
       </Helmet>
 
-      {/* ── Hero banner ──────────────────────────────────────── */}
-      <section
-        className="relative pt-32 pb-16 overflow-hidden"
-        style={{ background: "hsl(0 0% 5%)" }}
-      >
-        {/* faint blurred bg image */}
-        <div className="absolute inset-0">
-          <img
-            src={allImages[0]}
-            alt=""
-            className="w-full h-full object-cover opacity-[0.06] blur-sm scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(0_0%_5%/0.6)] via-[hsl(0_0%_5%/0.85)] to-[hsl(0_0%_5%)]" />
-        </div>
-
-        {/* grid overlay */}
+      {/* Hero Header */}
+      <section className="relative pt-32 pb-16 overflow-hidden border-b border-white/10" style={{ background: "hsl(0 0% 5%)" }}>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(to right, hsl(0 0% 100% / 0.03) 1px, transparent 1px),
-                             linear-gradient(to bottom, hsl(0 0% 100% / 0.03) 1px, transparent 1px)`,
-            backgroundSize: "55px 55px",
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% 0%, hsl(35 90% 18% / 0.5) 0%, transparent 70%)",
           }}
         />
 
         <div className="container-custom relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <Link
               to="/projects"
               className="inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors mb-8 text-sm"
@@ -74,14 +66,19 @@ const ProjectDetail = () => {
             </Link>
 
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${categoryColors[project.category]}`}>
+              <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border ${categoryColors[project.category] || "bg-primary/10 text-primary border-primary/20"}`}>
                 {project.category}
               </span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 max-w-3xl leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 max-w-3xl leading-tight">
               {project.title}
             </h1>
+            {project.subtitle && (
+              <p className="text-lg font-medium text-primary mb-4">
+                {project.subtitle}
+              </p>
+            )}
             <p className="text-base text-white/60 max-w-2xl mb-8 leading-relaxed">
               {project.description}
             </p>
@@ -132,6 +129,9 @@ const ProjectDetail = () => {
                     key={activeImg}
                     src={allImages[activeImg]}
                     alt={`${project.title} - ${activeImg + 1}`}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = "/placeholder.svg";
+                    }}
                     className="w-full object-contain cursor-zoom-in"
                     style={{ maxHeight: "520px", background: "hsl(0 0% 8%)" }}
                     initial={{ opacity: 0, scale: 0.98 }}
